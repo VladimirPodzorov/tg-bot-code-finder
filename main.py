@@ -1,8 +1,15 @@
+from os import getenv
+from dotenv import load_dotenv
+
 import telebot
 from data_file import req
 from count_check import check
 
-bot = telebot.TeleBot('5833156230:AAFUFi7BtV8CiZfcnumMH4yMD798Z-pvQj0')
+
+load_dotenv()
+token = getenv('TOKEN', None)
+
+bot = telebot.TeleBot(getenv('TOKEN', None))
 
 data = req()
 
